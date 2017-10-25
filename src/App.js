@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './lib/bootstrap/css/bootstrap.min.css';
 import './App.css';
+import RightSide from './components/RightSide/RightSide';
 
 class App extends Component {
 
@@ -17,10 +18,14 @@ class App extends Component {
         <h1>Our App</h1>
       </header>
       <section>
-        <section className="col-md-12">
+        <section className="col-md-3">
 
+        </section>
+        <section className="col-md-6">
 
-
+        </section>
+        <section className="col-md-3">
+          <RightSide />
         </section>
       </section>
     </div>);
