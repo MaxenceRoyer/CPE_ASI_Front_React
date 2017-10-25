@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './lib/bootstrap/css/bootstrap.min.css';
 import './App.css';
-import RightSide from './components/RightSide/RightSide';
+import Main from './components/mainPanel/Main';
 
 class App extends Component {
 
@@ -13,22 +13,7 @@ class App extends Component {
   }
 
   render() {
-    return (<div className="App">
-      <header className="App-title">
-        <h1>Our App</h1>
-      </header>
-      <section>
-        <section className="col-md-3">
-
-        </section>
-        <section className="col-md-6">
-
-        </section>
-        <section className="col-md-3">
-          <RightSide />
-        </section>
-      </section>
-    </div>);
+    return (<Main/>);
   }
 
 }
