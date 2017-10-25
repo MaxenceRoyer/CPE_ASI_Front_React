@@ -14,11 +14,11 @@ Cela permet d'étendre la classe React.Component qui est une classe abtraite per
 ```
 The main difference between state and props is that props are immutable. This is why the container component should define the state that can be updated and changed, while the child components should only pass data from the state using props.
 ```
-Les props représentent les données envoyées aux composants enfants, ces données ne sont pas modifiables. Cela sert à échanger des données immuables afin de les réutiliser dans les composants fils.
+Les props représentent les données envoyées aux composants enfants, ces données ne sont pas modifiables. Cela sert à échanger des données immuables afin de les réutiliser dans les composants fils. Props : on se contente de récupérer/afficher des données immutables.
 # 4.2.3 Que représente state ? à quoi sert-il ?
 ```
 State is the place where the data comes from. We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
 ```
- Il s'agit de l'initialisation des données utiles au composant et à ses éventuels enfants.
+ Il s'agit de l'initialisation des données utiles au composant et à ses éventuels enfants. State : responsabilité des données, on les affiche, les modifie, etc.
 # 4.2.4 Quelle est la fonction principale de render() ?
-La méthode render() permet la création et le retour d'éléments à afficher sur le WebBrowser, avec principe d'inclusion de composants enfants éventuels (intéractions, etc.). Cette méthode permet de renvoyer des composants react, des strings et nombres, des booléens, etc. Il examine this.props et this.state afin de les retourner.
+La méthode render() permet la création et le retour d'éléments à afficher sur le WebBrowser, avec principe d'inclusion de composants enfants éventuels (intéractions, etc.). Cette méthode permet de renvoyer des composants react, des strings et nombres, des booléens, etc. Il examine this.props et this.state afin de les retourner. Appliquer les modifications du Virtual DOM sur le DOM.
