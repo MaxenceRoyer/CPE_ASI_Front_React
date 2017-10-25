@@ -12,12 +12,12 @@ Un fichier CSS est créé dans chaque répertoire associé à un composant. Cela
 Cela permet d'étendre la classe React.Component qui est une classe abtraite permettant de créer et de gérer des composants créés avec ReactJS. Les classes qui étendent React.Component doivent redéfinir la méthode render() donnant la vue qui sera affichée sur l'application.
 # 4.2.2 Que représente props ? à quoi sert-il ?
 ```
-The main difference between state and props is that props are immutable. This is why the container component should define the state that can be updated and changed, while the child components should only pass data from the state using props."
+The main difference between state and props is that props are immutable. This is why the container component should define the state that can be updated and changed, while the child components should only pass data from the state using props.
 ```
 Les props représentent les données envoyées aux composants enfants, ces données ne sont pas modifiables. Cela sert à échanger des données immuables afin de les réutiliser dans les composants fils.
 # 4.2.3 Que représente state ? à quoi sert-il ?
 ```
-"State is the place where the data comes from. We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them."
+State is the place where the data comes from. We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
 ```
  Il s'agit de l'initialisation des données utiles au composant et à ses éventuels enfants.
 # 4.2.4 Quelle est la fonction principale de render() ?
