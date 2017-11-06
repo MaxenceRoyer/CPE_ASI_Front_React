@@ -1,1 +1,10 @@
-{}
+{
+  "contents":[
+    {"id":"1", "src":"http://hdwallpapersrocks.com/wp-content/uploads/2013/09/3D-computer-chip-HD-wallpaper.jpg", "title":"My Computer 1", "type":"img", "onlyContent":"true"},
+    {"id":"2", "src":"https://ak1.picdn.net/shutterstock/videos/15230341/thumb/1.jpg", "title":"My Computer 2", "type":"img", "onlyContent":"false"},
+    {"id":"3", "src":"http://www.cocostaffing.co.uk/wp-content/uploads/2016/09/cloudblog.jpg", "title":"My Computer 3", "type":"img", "onlyContent":"true"},
+    {"id":"4", "src":"https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/S15GBCm/4k-colorful-flying-icons-of-media-files-such-as-video-images-audio-notes-folders-music-and-other-icons-background-computing-and-cloud-storage-concept-seamless-loop_nfvrm0gcx__M0000.jpg", "title":"My Computer 4", "type":"img", "onlyContent":"false"},
+    {"id":"5", "src":"http://www.hardware.group/wp-content/uploads/2017/05/shutterstock_140095138.jpg", "title":"My Computer 5", "type":"img", "onlyContent":"true"},
+    {"id":"6", "src":"https://www.youtube.com/embed/AcqL9IXVfN8", "title":"My Computer 6", "type":"video", "onlyContent":"false"}
+  ]
+}

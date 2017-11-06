@@ -27,7 +27,7 @@ class ContentSimple extends Component {
 				array_render.push(<VisualWeb src={this.props.src} />);
 				break;
 			default:
-				array_render.push(<center><h1>Unsupported</h1></center>)
+				array_render.push(<center><h3>Unsupported</h3></center>)
 				break;
 		}
     return (<div>
