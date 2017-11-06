@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './lib/bootstrap/css/bootstrap.min.css';
+import './lib/bootstrapv4/css/bootstrap.min.css';
 import './App.css';
 import Main from './components/mainPanel/Main';
 

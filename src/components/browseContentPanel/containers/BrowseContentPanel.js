@@ -11,7 +11,7 @@ class BrowseContentPanel extends Component {
   }
 
   render() {
-    return (<div class="BrowseContentPanel">BrowseContentPanel</div>);
+    return (<div className="BrowseContentPanel"></div>);
   }
 
 }

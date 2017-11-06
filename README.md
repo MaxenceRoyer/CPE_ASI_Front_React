@@ -22,3 +22,6 @@ State is the place where the data comes from. We should always try to make our s
  Il s'agit de l'initialisation des données utiles au composant et à ses éventuels enfants. State : responsabilité des données, on les affiche, les modifie, etc.
 # 4.2.4 Quelle est la fonction principale de render() ?
 La méthode render() permet la création et le retour d'éléments à afficher sur le WebBrowser, avec principe d'inclusion de composants enfants éventuels (intéractions, etc.). Cette méthode permet de renvoyer des composants react, des strings et nombres, des booléens, etc. Il examine this.props et this.state afin de les retourner. Appliquer les modifications du Virtual DOM sur le DOM.
+# 4.3.3 Pourquoi est-il intéressant de proposer des composants « visuels» ?
+# 4.3.4 Que représente les différents répertoires de componants/common/Container (containers, components) ?
+# 4.3.5 Pourquoi le composant Container a-t-il été placé dans un répertoire common ?
