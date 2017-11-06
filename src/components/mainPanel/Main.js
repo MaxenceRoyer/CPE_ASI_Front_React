@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './main.css';
 import BrowseContentPanel from '../browseContentPanel/containers/BrowseContentPanel';
+import BrowsePresentationPanel from '../browsePresentationPanel/containers/BrowsePresentationPanel';
 import Content from '../common/content/containers/Content';
 
 class Main extends Component {
@@ -19,6 +20,7 @@ class Main extends Component {
                       <BrowseContentPanel />
                   </div>
                   <div className='col-xs-12 col-md-6 col-lg-6 height-100'>
+                    <BrowsePresentationPanel />
                   </div>
                   <div className='col-xs-12 col-md-3 col-lg-3 height-100 dropFileClass'>
                       <div className="field_set">
