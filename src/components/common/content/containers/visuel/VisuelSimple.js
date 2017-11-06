@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-class VisuelISimpe extends Component {
+
+class VisuelSimple extends Component {
 	constructor(props) {
     super(props);
     this.state = {
@@ -8,15 +9,12 @@ class VisuelISimpe extends Component {
   }
 
   render() {
-      
-    return (
-            <div>
-            	<ImageImage
-               		image={this.state.content.image}
-               	/>
-            </div>
-    );
+    return (<div>
+							<div className="card" width="100%">
+								<img className="card-img-top" src={this.props.src} />
+							</div>
+						</div>);
   }
 
 }
-export default VisuelISimpe;
+export default VisuelSimple;
