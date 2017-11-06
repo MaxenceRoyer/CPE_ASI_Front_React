@@ -23,5 +23,9 @@ State is the place where the data comes from. We should always try to make our s
 # 4.2.4 Quelle est la fonction principale de render() ?
 La méthode render() permet la création et le retour d'éléments à afficher sur le WebBrowser, avec principe d'inclusion de composants enfants éventuels (intéractions, etc.). Cette méthode permet de renvoyer des composants react, des strings et nombres, des booléens, etc. Il examine this.props et this.state afin de les retourner. Appliquer les modifications du Virtual DOM sur le DOM.
 # 4.3.3 Pourquoi est-il intéressant de proposer des composants « visuels» ?
+Ces composants permètent de gêrer l'affichage du composant en fonction du type. Pour chaque types (image, vidéo, page web) que l'on veut gérer, on crée un  composant visuel.
+L'intéret est de découpé les composant pour qu'ils soient le plus petit possible, ansi, l'élément qui appel le bon composant visuel délègue la gestion de l'affichage à ce sous composant.
 # 4.3.4 Que représente les différents répertoires de componants/common/Container (containers, components) ?
+N/A
 # 4.3.5 Pourquoi le composant Container a-t-il été placé dans un répertoire common ?
+Le composant Container à été placé dans common car il va être réutilsé par plusieurs autres composants dans différentes partie de la page web. On voit là toute l'utilité des composans : la réutilisabilité. 
