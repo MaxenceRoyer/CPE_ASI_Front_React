@@ -43,20 +43,16 @@ class BrowseContentPanel extends Component {
 
   render() {
     let display = this.getAllContents();
-    return (<div className="BrowseContentPanel">
-              <div className="form-group row">
-                <label htmlFor="title-input" className="col-2 col-form-label">Title</label>
-                <div className="col-12">
-                  <input className="form-control" type="text" value="" id="title-input" />
-                </div>
-                <label htmlFor="description-input" className="col-2 col-form-label">Description</label>
-                <div className="col-12">
-                  <input className="form-control" type="text" value="" id="description-input" />
-                </div>
-              </div>
-              <hr />
-              {display}
-            </div>);
+    return (
+      <div className="field_set">
+        <div className="card" width="100%">
+          <legend>Drop files here</legend>
+        </div>
+        <div className="BrowseContentPanel">
+          <hr />
+          {display}
+          </div>
+        </div>);
   }
 
 }

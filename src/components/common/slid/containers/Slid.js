@@ -9,8 +9,8 @@ class Slid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title : "Test",
-      description : "Ceci est un test"
+      title : this.props.title,
+      description : this.props.description
     };
   }
 /*

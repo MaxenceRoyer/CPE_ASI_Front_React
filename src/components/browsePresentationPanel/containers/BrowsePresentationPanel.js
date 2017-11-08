@@ -12,7 +12,7 @@ class BrowsePresentationPanel extends Component {
     };
   }
 
-  getAllPresentationRender() {
+  getAllSlids() {
     let array_render = [];
 
     for(var i = 0; i < this.state.contentMap.contents.length; i++) 
@@ -28,10 +28,10 @@ class BrowsePresentationPanel extends Component {
   }
 
   render() {
-    let display = this.getAllPresentationRender();
+    //let display = this.getAllSlids();
     return (
       <div>
-         {display}
+      <Presentation />
       </div>
     );
   }
