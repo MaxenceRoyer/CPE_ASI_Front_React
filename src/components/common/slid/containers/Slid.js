@@ -4,14 +4,19 @@ import ContentInfos from '../../content/containers/contentDisplay/ContentInfos';
 import ContentSimple from '../../content/containers/contentDisplay/ContentSimple';
 import EditMetaSlid from '../components/EditMetaSlid';
 
-class Slid extends Component {
+import { connect } from 'react-redux';
+import {setSelectedSlid } from '../../../../actions'
+
+class Slid extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
       title : this.props.title,
-      description : this.props.description
+      description : this.props.description,
+      content : this.props.content
     };
+    this.updateSelectedSlid=this.updateSelectedSlid.bind(this);
   }
 /*
   callContentInfos()
@@ -40,6 +45,15 @@ class Slid extends Component {
     this.setState({description: event.target.value}).bind(this)
   }*/
 
+  updateSelectedSlid(){
+    const tmpSlid={id:this.props.id,
+      title:this.props.title,
+      description:this.props.description,
+      content_id:this.props.content.id};
+    this.props.dispatch(setSelectedSlid(tmpSlid));
+  }
+   
+
 displayEditMeta(){
 
   var onChangeTitle = function(event){
@@ -57,9 +71,9 @@ displayEditMeta(){
     array_render.push(
       <EditMetaSlid 
         handleChangeTitle = {onChangeTitle}                     
-        title = {this.state.title}
+        title = {this.props.title}
         handleChangeTxt = {onChangeDescription}            
-        txt = {this.state.description}
+        txt = {this.props.description}
       />);
     break;
     case "SHORT":
@@ -76,12 +90,12 @@ displayEditMeta(){
 
     //var i = this.props.slidId;
     return (
-      <div className="card" width="100%">
+      <div className="card" width="100%" onClick={()=>{this.updateSelectedSlid(this.props.selected_slide)}}>
         <h1>{this.state.title}</h1>
         <span>{this.state.description}</span>
         <ContentSimple
-              src={this.props.content.src}
-              type={this.props.content.type}
+              src={this.state.content.src}
+              type={this.state.content.type}
         />
         {display}
       </div>
@@ -89,4 +103,4 @@ displayEditMeta(){
   }
 
 }
-export default Slid;
+export default  connect()(Slid);

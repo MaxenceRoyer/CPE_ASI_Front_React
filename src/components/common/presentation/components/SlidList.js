@@ -19,6 +19,7 @@ class SlidList extends Component {
       var idImage = this.state.contentMap.slids[i].idImage;
       array_render.push(<Slid
         content={this.state.contentMap.contents[i]}
+        //content_id={this.state.contentMap.contents[i].id}
         title={this.state.contentMap.slids[i].title}
         description={this.state.contentMap.slids[i].description}
         displayMode="SHORT"
