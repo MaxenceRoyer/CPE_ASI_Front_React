@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as jsonSource from '../../../sources/contentMap.json';
 import Slid from '../../common/slid/containers/Slid';
 import {connect } from 'react-redux';
+import {updateContentMap} from '../../../actions';
 
 class EditSlidPanel extends React.Component {
 
@@ -41,11 +42,12 @@ class EditSlidPanel extends React.Component {
         description={this.props.selected_slid.description}
         displayMode="FULL_MNG"
       />);
-      this.state.firstTime=1;
+      //this.state.firstTime=1;
       //array_render.push(this.props.selected_slid);
       array_render.push(<br />);
       
     }
+    //this.props.dispatch(updateContentMap(this.props.contentMap));
     return array_render;
   }
 
@@ -63,4 +65,11 @@ const mapStateToProps = (state, ownProps) => {
   return {
     selected_slid: state.selectedReducer.slid,
   } };
- export default connect(mapStateToProps)(EditSlidPanel);
+
+  const mapStateToPropsMap = (state, ownProps) => {
+    return {
+      //contentMap: state.updateModuleReducer.contentMap,
+    } 
+  };
+
+ export default connect(mapStateToProps, mapStateToPropsMap)(EditSlidPanel);

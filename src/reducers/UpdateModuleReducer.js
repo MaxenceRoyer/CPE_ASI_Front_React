@@ -1,16 +1,18 @@
 //UpdateModuleReducer.js
 //var Tools = require('../services/Tools.js');
-const updateModelReducer= (state={presentation:{},content_map:{}},action) => {
+const updateModelReducer= (state={presentation:{},contentMap:{}},action) => {
     console.log(action);
     switch (action.type) {
         case 'UPDATE_PRESENTATION':
-            return ; //TO DO
+            return state; //TO DO
         case 'UPDATE_PRESENTATION_SLIDS':
-            return; //TO DO
+            return state;
         case 'UPDATE_CONTENT_MAP':
-            return ; //TO DO
+        const newState1={contentMap:action.obj};
+        console.log("Test")
+        return newState1;
         case 'ADD_CONTENT':
-            return; //TO DO
+            return state; //TO DO
         default:
             return state;
     }

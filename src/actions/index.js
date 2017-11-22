@@ -6,9 +6,9 @@ export const setSelectedSlid=(slid_obj)=>{
     };
 }
 
-export const updateModelMap=(slid_obj)=>{
+export const updateContentMap=(contentMap_obj)=>{
     return {
-        type: 'UPDATE_MODEL_MAP',
-        obj:slid_obj
+        type: 'UPDATE_CONTENT_MAP',
+        obj:contentMap_obj,
     };
 }

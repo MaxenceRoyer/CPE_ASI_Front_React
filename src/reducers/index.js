@@ -4,7 +4,7 @@ import updateModuleReducer from './UpdateModuleReducer';
 
 const globalReducer = combineReducers({
     selectedReducer: selectedReducer,
-    updateModuleReducer: updateModuleReducer
+    updateModuleReducer: updateModuleReducer,
    
 });
 

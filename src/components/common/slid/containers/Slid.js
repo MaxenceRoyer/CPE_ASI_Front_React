@@ -53,7 +53,14 @@ class Slid extends React.Component {
       description:this.props.description,
       content_id:this.props.content.id};
     this.props.dispatch(setSelectedSlid(tmpSlid));
-    //this.props.dispatch(setSelectedSlid(this));//For Test
+  }
+
+  updateSlidInfo(){
+    const tmpSlid={id:this.props.id,
+      title:this.props.title,
+      description:this.props.description,
+      content_id:this.props.content.id};
+    this.props.dispatch(setSelectedSlid(tmpSlid));
   }
 
   onChangeTitle(event){

@@ -4,11 +4,14 @@ import BrowseContentPanel from '../browseContentPanel/containers/BrowseContentPa
 import BrowsePresentationPanel from '../browsePresentationPanel/containers/BrowsePresentationPanel';
 import EditSlidPanel from '../editSlidPanel/containers/EditSlidPanel';
 import Content from '../common/content/containers/Content';
-import * as contentTmp from '../../sources/contentMap.json';
+import * as jsonSource from '../../sources/contentMap.json';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import globalReducer from '../../reducers';
+import {connect } from 'react-redux';
+
+import {updateContentMap} from '../../actions';
 
 const store = createStore(globalReducer);
 
@@ -17,12 +20,17 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      presTmp:this.props.contentTmp,
+     // presTmp:this.props.contentTmp,,
       selected_slid_id:0,
-      selected_slid:[]
+      selected_slid:[],
+      //contentMap:[]
+      
     };
+    contentMap:jsonSource;
 
-    //store.dispatch(updateContentMap(contentMapTmp));
+    const contentMapTmp = jsonSource;//{content : this.props.contentMap.contents,
+      //slids:this.props.contentMap.slids};
+    store.dispatch(updateContentMap(this.props.contentMap));
   }
 
   render() {
@@ -44,6 +52,7 @@ class Main extends Component {
               </div>
           </div>
         </Provider>);
+        store.dispatch(updateContentMap(this.props.contentMap));
   }
 
 }
