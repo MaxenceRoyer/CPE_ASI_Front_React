@@ -41,3 +41,13 @@ Elle servent à transmettre appliquer les modifications du titre et du text dans
 C'est le composant qui appel EditMetaDataSlid (Slid) qui définit ces fonctions et transmet la fonction dans les props.
 #STEP 3 : Manipulation des actions et des reducers
 #6.4.2.A quoi sert la ligne connect()(Slid) ? Pourquoi n’y a-t-il pas d’argument à connect() ?
+Connect() permet de connecter Slid au Store. Ainsi il est possible de récuperer ses props afin quelle puisses être utilisé part d'autres objets.
+Il n'y a pas d'argument car on veut que l'objet Slid en entier soit accessible pas seulment quelques props ou fonctions.
+#6.4.3. Que fait la ligne this.props.dispatch(setSelectedSlid(tmpSlid)) ?
+Envoi l'objet tmpSlid qui est une copie de l'objet Slid selectionné à la methode setSelectedSlid de l'action afin que les props contenu dans la Slid soit traités
+#6.4.4.A quoi correspond setSelectedSlid ?
+À une méthode dans action qui permet de récuperer l'objet à traiter.
+#6.4.5.Que se passerait il si un nouvel objet n’était pas créé (tmpSlid) ?
+Si un objet intemédiaire n'est pas créé, et qu'on essay d'envoyé l'objet lui même, il n'est pas transmis.
+#6.5.2.Que permet de réaliser l’argument mapStateToProps ? 
+mapStateToProps est le nom de la fonction qui doit êtr appellé lorsque qu'une nouvelle diapositive à été selectionnée afin de rédupérer son contenu dans les props de EditSlidePanel.

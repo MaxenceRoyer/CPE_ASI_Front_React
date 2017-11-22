@@ -17,6 +17,8 @@ class Slid extends React.Component {
       content : this.props.content
     };
     this.updateSelectedSlid=this.updateSelectedSlid.bind(this);
+    this.onChangeTitle=this.onChangeTitle.bind(this);
+    this.onChangeDescription=this.onChangeDescription.bind(this);
   }
 /*
   callContentInfos()
@@ -51,18 +53,21 @@ class Slid extends React.Component {
       description:this.props.description,
       content_id:this.props.content.id};
     this.props.dispatch(setSelectedSlid(tmpSlid));
+    //this.props.dispatch(setSelectedSlid(this));//For Test
+  }
+
+  onChangeTitle(event){
+    this.setState({title: event.target.value})
+  }
+
+  onChangeDescription(event){
+    this.setState({description: event.target.value})
   }
    
 
 displayEditMeta(){
 
-  var onChangeTitle = function(event){
-    this.setState({title: event.target.value})
-  }.bind(this);
-
-  var onChangeDescription = function(event){
-    this.setState({description: event.target.value})
-  }.bind(this);
+  
 
   let array_render = [];
 
@@ -70,9 +75,9 @@ displayEditMeta(){
     case "FULL_MNG":
     array_render.push(
       <EditMetaSlid 
-        handleChangeTitle = {onChangeTitle}                     
+        handleChangeTitle = {this.props.onChangeTitle}                     
         title = {this.props.title}
-        handleChangeTxt = {onChangeDescription}            
+        handleChangeTxt = {this.props.onChangeDescription}            
         txt = {this.props.description}
       />);
     break;
@@ -91,11 +96,11 @@ displayEditMeta(){
     //var i = this.props.slidId;
     return (
       <div className="card" width="100%" onClick={()=>{this.updateSelectedSlid(this.props.selected_slide)}}>
-        <h1>{this.state.title}</h1>
-        <span>{this.state.description}</span>
+        <h1>{this.props.title}</h1>
+        <span>{this.props.description}</span>
         <ContentSimple
-              src={this.state.content.src}
-              type={this.state.content.type}
+              src={this.props.content.src}
+              type={this.props.content.type}
         />
         {display}
       </div>

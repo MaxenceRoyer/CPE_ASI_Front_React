@@ -4,6 +4,7 @@ import BrowseContentPanel from '../browseContentPanel/containers/BrowseContentPa
 import BrowsePresentationPanel from '../browsePresentationPanel/containers/BrowsePresentationPanel';
 import EditSlidPanel from '../editSlidPanel/containers/EditSlidPanel';
 import Content from '../common/content/containers/Content';
+import * as contentTmp from '../../sources/contentMap.json';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -16,13 +17,16 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      presTmp:this.props.contentTmp,
       selected_slid_id:0,
       selected_slid:[]
     };
+
+    //store.dispatch(updateContentMap(contentMapTmp));
   }
 
   render() {
-    var onSlidClicked = function (event){}
+    //var onSlidClicked = function (event){}
 
     return (
         <Provider store={store} >
@@ -32,8 +36,7 @@ class Main extends Component {
                     <BrowsePresentationPanel />
                   </div>
                   <div className='col-xs-12 col-md-6 col-lg-6 height-100'>
-                    <EditSlidPanel
-                    selected_slid={this.state.selected_slid}/>
+                    <EditSlidPanel />
                   </div>
                   <div className='col-xs-12 col-md-3 col-lg-3 height-100 dropFileClass'>
                     <BrowseContentPanel />

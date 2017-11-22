@@ -10,8 +10,9 @@ class EditSlidPanel extends React.Component {
     this.state = {
 
       contentMap : jsonSource,
-      firstTime:0
-      //selected_slid : this.props.selected_slid
+      firstTime:0,
+      //this.props.
+      selected_slid : this.props.selected_slid
 
     };
   }
@@ -40,6 +41,7 @@ class EditSlidPanel extends React.Component {
         description={this.props.selected_slid.description}
         displayMode="FULL_MNG"
       />);
+      this.state.firstTime=1;
       //array_render.push(this.props.selected_slid);
       array_render.push(<br />);
       
