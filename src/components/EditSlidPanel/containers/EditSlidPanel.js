@@ -12,10 +12,10 @@ class EditSlidPanel extends React.Component {
 
       contentMap : jsonSource,
       firstTime:0,
-      //this.props.
       selected_slid : this.props.selected_slid
 
     };
+    const firstTimeMap=0;
   }
   
 
@@ -31,6 +31,7 @@ class EditSlidPanel extends React.Component {
      let content_id = this.props.selected_slid.content_id;
      console.log(content_id);
      if(this.state.firstTime==0)
+     //if(this.state.contentMap==='undifined')
      {
         array_render.push(<br />);
         this.state.firstTime=1;
@@ -42,7 +43,6 @@ class EditSlidPanel extends React.Component {
         description={this.props.selected_slid.description}
         displayMode="FULL_MNG"
       />);
-      //this.state.firstTime=1;
       //array_render.push(this.props.selected_slid);
       array_render.push(<br />);
       
@@ -61,15 +61,19 @@ class EditSlidPanel extends React.Component {
   }
 
 }
+
 const mapStateToProps = (state, ownProps) => {
   return {
     selected_slid: state.selectedReducer.slid,
   } };
 
   const mapStateToPropsMap = (state, ownProps) => {
-    return {
+    /*if(state.updateModuleReducer.contentMap == 'undifined'){ 
+    }else{*/
+    return { 
       //contentMap: state.updateModuleReducer.contentMap,
     } 
+  //}
   };
 
  export default connect(mapStateToProps, mapStateToPropsMap)(EditSlidPanel);
