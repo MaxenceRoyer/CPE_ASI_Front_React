@@ -12,6 +12,7 @@ class EditSlidPanel extends React.Component {
 
       contentMap : jsonSource,
       firstTime:0,
+      //contentMap : this.props.contentMap,
       selected_slid : this.props.selected_slid
 
     };
@@ -21,33 +22,30 @@ class EditSlidPanel extends React.Component {
 
   getSlid() {
     let array_render = [];
-    //selected_slide = {this.props.selectedSlid};
-      /*array_render.push(<Slid
-        content={this.state.contentMap.contents[this.props.selectedSlid]}
-        title={this.state.contentMap.slids[this.props.selectedSlid].title}
-        description={this.state.contentMap.slids[this.props.selectedSlid].description}
-        displayMode="FULL_MNG"
-      />);*/
      let content_id = this.props.selected_slid.content_id;
-     console.log(content_id);
+     //console.log(content_id);
      if(this.state.firstTime==0)
-     //if(this.state.contentMap==='undifined')
+     //if(this.state.contentMap==='undefined')
      {
         array_render.push(<br />);
         this.state.firstTime=1;
      }
      else{
-      array_render.push(<Slid
-        content={this.state.contentMap.contents[content_id-1]}
-        title={this.props.selected_slid.title}
-        description={this.props.selected_slid.description}
-        displayMode="FULL_MNG"
-      />);
-      //array_render.push(this.props.selected_slid);
+      if(this.state.contentMap === undefined ){}
+      else{
+      if(this.state.contentMap.slids === undefined || this.state.contentMap.contents === undefined){}
+      else{
+          array_render.push(<Slid
+            content={this.state.contentMap.contents[content_id-1]}
+            title={this.props.selected_slid.title}
+            description={this.props.selected_slid.description}
+            displayMode="FULL_MNG"
+          />);
+        }
+      }
+    }
       array_render.push(<br />);
       
-    }
-    //this.props.dispatch(updateContentMap(this.props.contentMap));
     return array_render;
   }
 
@@ -68,12 +66,13 @@ const mapStateToProps = (state, ownProps) => {
   } };
 
   const mapStateToPropsMap = (state, ownProps) => {
-    /*if(state.updateModuleReducer.contentMap == 'undifined'){ 
-    }else{*/
-    return { 
-      //contentMap: state.updateModuleReducer.contentMap,
-    } 
-  //}
+      if (!state.updateModuleReducer === undefined && !state.updateModuleReducer.contentMap === undefined) {
+        return {
+          contentMap: state.updateModuleReducer.contentMap,
+        } 
+     } else {
+        console.log("state.updateModuleReducer=" + state.updateModuleReducer);
+      }
   };
 
  export default connect(mapStateToProps, mapStateToPropsMap)(EditSlidPanel);

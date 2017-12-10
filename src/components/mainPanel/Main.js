@@ -23,20 +23,16 @@ class Main extends Component {
      // presTmp:this.props.contentTmp,,
       selected_slid_id:0,
       selected_slid:[],
-      //contentMap:[]
-      
+      contentMap:jsonSource
     };
-    contentMap:jsonSource;
 
-    const contentMapTmp = jsonSource;//{content : this.props.contentMap.contents,
-      //slids:this.props.contentMap.slids};
-    store.dispatch(updateContentMap(this.props.contentMap));
+    const contentMapTmp = this.state.contentMap;
+    store.dispatch(updateContentMap(contentMapTmp));
   }
 
   render() {
-    //var onSlidClicked = function (event){}
-
     return (
+      
         <Provider store={store} >
             <div className='Main container-fluid height-100'>
               <div className="row height-100">
@@ -52,7 +48,8 @@ class Main extends Component {
               </div>
           </div>
         </Provider>);
-        store.dispatch(updateContentMap(this.props.contentMap));
+        const contentMapTmp = this.state.contentMap;
+        store.dispatch(updateContentMap(contentMapTmp));
   }
 
 }
